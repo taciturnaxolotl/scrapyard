@@ -30,7 +30,7 @@ const schedule = [
   { time: '12:30 PM', event: 'Lunch' },
   { time: '1:00 PM', event: 'Start working on your project!' },
   { time: '2:00 PM', event: 'Workshop 1' },
-  { time: '4:00 PM', event: 'Activity 1' },
+  { time: '3:00 PM', event: 'Activity 1' },
   { time: '4:00 PM', event: 'Workshop 2' },
   { time: '6:00 PM', event: 'Dinner' },
   { time: '7:00 PM', event: 'Lightning talks' },
