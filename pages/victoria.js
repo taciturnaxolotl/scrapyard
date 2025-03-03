@@ -26,15 +26,15 @@ import dynamic from 'next/dynamic'
 // TODO: Change this schedule to your own!
 const schedule = [
   { time: '9:00 AM', event: 'Doors open' },
-  { time: '11:00 AM', event: 'Opening ceremony' },
+  { time: '10:00 AM', event: 'Opening ceremony' },
   { time: '12:30 PM', event: 'Lunch' },
   { time: '1:00 PM', event: 'Start working on your project!' },
   { time: '2:00 PM', event: 'Workshop 1' },
   { time: '4:00 PM', event: 'Activity 1' },
   { time: '4:00 PM', event: 'Workshop 2' },
   { time: '6:00 PM', event: 'Dinner' },
-  { time: '8:00 PM', event: 'Lightning talks' },
-  { time: '10:00 PM', event: 'Demos!' },
+  { time: '7:00 PM', event: 'Lightning talks' },
+  { time: '8:00 PM', event: 'Demos!' },
   { time: '9:00 PM', event: 'Closing ceremony' }
 ]
 
