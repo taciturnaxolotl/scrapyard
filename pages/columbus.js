@@ -24,7 +24,7 @@ const schedule = [
   { time: '6:00 PM', event: 'DINNER!' },
   { time: '7:00 PM', event: 'HACKING CONTINUES' },
   { time: '9:00 PM', event: 'END OF DAY GAME*' },
-  { time: '9:30 PM', event: 'CLOSING FOR THE DAY' }
+  { time: '9:30 PM', event: 'CLOSING FOR THE DAY' },
 ]
 
 const scheduleday2 = [
@@ -539,12 +539,28 @@ export default function Columbus() {
             fontSize: '1.5em',
             fontFamily: 'moonblossom',
             color: 'white',
-            textAlign: 'center'
+            textAlign: 'center',
+            paddingTop: 40
           }}
         >
           Scrapyard Columbus is a 2-day event - HERE'S THE
           SCHEDULE!
         </Heading>
+
+        <Heading
+          as="h2"
+          sx={{
+            fontSize: '1em',
+            fontFamily: 'moonblossom',
+            color: 'white',
+            textAlign: 'center',
+            paddingTop: 20
+          }}
+        >
+          (subject to change)
+        </Heading>
+
+
         <Box
           sx={{
             display: 'flex',
@@ -610,6 +626,20 @@ export default function Columbus() {
               <p style={{ display: 'inline', margin: 0 }}>{item.time}</p>
             </div>
           ))}
+
+        <Heading
+          as="h2"
+          sx={{
+            fontSize: '0.8em',
+            fontFamily: 'moonblossom',
+            color: 'black',
+            textAlign: 'left',
+            paddingTop: 20
+          }}
+        >
+          *optional event
+        </Heading>
+
 
 
           {/* <Heading
