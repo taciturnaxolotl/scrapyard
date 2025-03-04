@@ -179,6 +179,8 @@ export default function Victoria() {
           <Heading
               as="h3"
               sx={{
+                display: 'flex',
+                flexFlow: 'column',
                 fontFamily: 'p22-stanyan',
                 mx: '8%',
                 p: 0,
@@ -192,7 +194,11 @@ export default function Victoria() {
                 gap: '20px'
               }}
             >
-              Powered by Viatech <img src="/city/victoria/viatech_logo.png" alt="Viatech Logo" width="85px" style={{ borderRadius: "10px" }}/>
+              Powered by VIATEC and Tiny
+              <div style={{display: 'flex', gap: "25px"}}>
+                <img src="/city/victoria/viatech_logo.png" alt="VIATEC Logo" width="85px" style={{ borderRadius: "10px" }}/>
+                <img src="/city/victoria/tiny_logo.png" alt="Tiny Logo" width="85px" style={{ borderRadius: "10px" }}/>
+              </div>
             </Heading>
         </Box>
         <Box
