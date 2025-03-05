@@ -8,6 +8,7 @@ import dynamic from 'next/dynamic'
 import React, { useEffect, useState } from 'react'
 
 // TODO: Change this schedule to your own!
+
 const schedinprog = [
   { time: 'XX:XX', event: 'SCHEDULE IN PROGRESS' }
 ]
@@ -17,9 +18,10 @@ const schedule = [
   { time: '10:45 PM', event: 'OPENING CEREMONY' },
   { time: '11:30 PM', event: 'TEAM FORMATION & CHALLENGE' },
   { time: '12:15 PM', event: 'HACKING STARTS' },
+  { time: '12:15 PM', event: 'STARTER WORKSHOP*' },
   { time: '1:00 PM', event: 'LUNCH!' },
-  { time: '1:45 PM', event: 'STARTER WORKSHOP*' },
-  { time: '3:00 PM', event: 'CYBERSECURITY WORKSOP*' },
+  { time: '2:00 PM', event: 'STARTER WORKSHOP CONTINUES*' },
+  { time: '3:00 PM', event: 'CYBERSECURITY WORKSHOP*' },
   { time: '4:00 PM', event: 'SURPRISE EVENT' },
   { time: '6:00 PM', event: 'DINNER!' },
   { time: '7:00 PM', event: 'HACKING CONTINUES' },
@@ -254,7 +256,7 @@ export default function Columbus() {
                 fontSize: ['1.2em', '1.4em']
               }}
             >
-              Venue TBA
+              PAST Foundation - 1003 Kinnear Rd.
             </Heading>
 
           </Box>
