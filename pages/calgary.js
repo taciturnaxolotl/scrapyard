@@ -1,3 +1,5 @@
+// shuflduf - i screwed up the formatting, mb
+
 '======== READ ME BEFORE EDITING ========'
 /*
 Hello! This is the template for the city pages.
