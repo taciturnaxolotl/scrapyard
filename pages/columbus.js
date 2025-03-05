@@ -13,20 +13,26 @@ const schedinprog = [
 ]
 
 const schedule = [
-  { time: '11:00 AM', event: 'Doors open' },
-  { time: '12:00 PM', event: 'Opening ceremony' },
-  { time: '12:30 PM', event: 'Lunch' },
-  { time: '1:00 PM', event: 'Hacking starts!' },
-  { time: '2:00 PM', event: 'Workshop 1' },
-  { time: '4:00 PM', event: 'Activity 1' },
-  { time: '4:00 PM', event: 'Workshop 2' },
-  { time: '6:00 PM', event: 'dinner' },
+  { time: '10:00 AM', event: 'DOORS OPEN' },
+  { time: '10:45 PM', event: 'OPENING CEREMONY' },
+  { time: '11:30 PM', event: 'TEAM FORMATION & CHALLENGE' },
+  { time: '12:15 PM', event: 'HACKING STARTS' },
+  { time: '1:00 PM', event: 'LUNCH!' },
+  { time: '1:45 PM', event: 'STARTER WORKSHOP*' },
+  { time: '3:00 PM', event: 'CYBERSECURITY WORKSOP*' },
+  { time: '4:00 PM', event: 'SURPRISE EVENT' },
+  { time: '6:00 PM', event: 'DINNER!' },
+  { time: '7:00 PM', event: 'HACKING CONTINUES' },
+  { time: '9:00 PM', event: 'END OF DAY GAME*' },
+  { time: '9:30 PM', event: 'CLOSING FOR THE DAY' },
 ]
 
 const scheduleday2 = [
-  { time: '8:00 AM', event: 'Breakfast' },
-  { time: '10:30 AM', event: 'Demos w/ judges' },
-  { time: '12:00 PM', event: 'Closing ceremony' }
+  { time: '11:00 AM', event: 'DOORS OPEN' },
+  { time: '11:30 AM', event: 'FINAL HACKING BLOCK' },
+  { time: '1:00 PM', event: 'HACKING ENDS' },
+  { time: '1:30 PM', event: 'PROJECT EXPO AND VOTING' },
+  { time: '3:00 PM', event: 'CLOSING CEREMONY & AWARDS' },
 ]
 
 //const Map = dynamic(() => import('../components/Map'), { ssr: false })
@@ -533,12 +539,28 @@ export default function Columbus() {
             fontSize: '1.5em',
             fontFamily: 'moonblossom',
             color: 'white',
-            textAlign: 'center'
+            textAlign: 'center',
+            paddingTop: 40
           }}
         >
           Scrapyard Columbus is a 2-day event - HERE'S THE
           SCHEDULE!
         </Heading>
+
+        <Heading
+          as="h2"
+          sx={{
+            fontSize: '1em',
+            fontFamily: 'moonblossom',
+            color: 'white',
+            textAlign: 'center',
+            paddingTop: 20
+          }}
+        >
+          (subject to change)
+        </Heading>
+
+
         <Box
           sx={{
             display: 'flex',
@@ -569,7 +591,7 @@ export default function Columbus() {
             Day 1 (SATURDAY)
           </Heading>
 
-          {schedinprog.map((item, i) => (
+          {schedule.map((item, i) => (
             <div
               style={{
                 display: 'flex',
@@ -604,6 +626,20 @@ export default function Columbus() {
               <p style={{ display: 'inline', margin: 0 }}>{item.time}</p>
             </div>
           ))}
+
+        <Heading
+          as="h2"
+          sx={{
+            fontSize: '0.8em',
+            fontFamily: 'moonblossom',
+            color: 'black',
+            textAlign: 'left',
+            paddingTop: 20
+          }}
+        >
+          *optional event
+        </Heading>
+
 
 
           {/* <Heading
@@ -651,7 +687,7 @@ export default function Columbus() {
             Day 2 (SUNDAY)
           </Heading>
 
-          {schedinprog.map((item, i) => (
+          {scheduleday2.map((item, i) => (
             <div
               style={{
                 display: 'flex',
