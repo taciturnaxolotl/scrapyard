@@ -8,22 +8,26 @@ import dynamic from 'next/dynamic'
 import React, { useEffect, useState } from 'react'
 
 // TODO: Change this schedule to your own!
+
 const schedinprog = [
   { time: 'XX:XX', event: 'SCHEDULE IN PROGRESS' }
 ]
 
 const schedule = [
-  { time: '10:00 AM', event: 'DOORS OPEN' },
+  { time: '10:30 AM', event: 'DOORS OPEN' },
   { time: '10:45 PM', event: 'OPENING CEREMONY' },
   { time: '11:30 PM', event: 'TEAM FORMATION & CHALLENGE' },
+  { time: '12:15 PM', event: 'STARTER WORKSHOP*' },
   { time: '12:15 PM', event: 'HACKING STARTS' },
+  { time: '12:15 PM', event: 'STARTER WORKSHOP*' },
   { time: '1:00 PM', event: 'LUNCH!' },
-  { time: '1:45 PM', event: 'STARTER WORKSHOP*' },
-  { time: '3:00 PM', event: 'CYBERSECURITY WORKSOP*' },
+  { time: '2:00 PM', event: 'STARTER WORKSHOP CONTINUES*' },
+  { time: '3:00 PM', event: 'CYBERSECURITY WORKSHOP*' },
   { time: '4:00 PM', event: 'SURPRISE EVENT' },
+  { time: '5:00 PM', event: 'DATA SCIENCE WORKSHOP' },
   { time: '6:00 PM', event: 'DINNER!' },
   { time: '7:00 PM', event: 'HACKING CONTINUES' },
-  { time: '9:00 PM', event: 'END OF DAY GAME*' },
+  { time: '9:15 PM', event: 'END OF DAY GAME*' },
   { time: '9:30 PM', event: 'CLOSING FOR THE DAY' },
 ]
 
@@ -254,7 +258,7 @@ export default function Columbus() {
                 fontSize: ['1.2em', '1.4em']
               }}
             >
-              Venue TBA
+              PAST Foundation - 1003 Kinnear Rd.
             </Heading>
 
           </Box>
@@ -596,7 +600,8 @@ export default function Columbus() {
               style={{
                 display: 'flex',
                 width: '100%',
-                alignItems: 'center'
+                alignItems: 'center', 
+                marginBottom: '2.5rem'
               }}
               key={i}
             >
@@ -637,7 +642,7 @@ export default function Columbus() {
             paddingTop: 20
           }}
         >
-          *optional event
+          *Optional event
         </Heading>
 
 
@@ -692,7 +697,8 @@ export default function Columbus() {
               style={{
                 display: 'flex',
                 width: '100%',
-                alignItems: 'center'
+                alignItems: 'center',
+                marginBottom: '2.5rem'
               }}
               key={i}
             >
@@ -790,7 +796,7 @@ export default function Columbus() {
             mt: 5
           }}
         >
-          {/* <Map /> */}
+          {/*<Map />*/}
         </Box>
       </Box>
 
