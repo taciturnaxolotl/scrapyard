@@ -826,11 +826,10 @@ export default function Columbus() {
             }}
           >
             <Image
-              src="https://cachet.dunkirk.sh/users/U06P62WGWAV/r"
+              src="https://cdn.hack.ngo/slackcdn/4c53ace72bc3e63c75477c87630133c6.webp"
               sx={{
-                width: '200px',
-                height: '200px',
-                borderRadius: '50%',
+                width: '20rem',
+                translate: 'rotate(-0.5deg)',
                 mb: 3
               }}
             />
@@ -856,11 +855,10 @@ export default function Columbus() {
             }}
           >
             <Image
-              src="https://cachet.dunkirk.sh/users/U0800CKMV8W/r"
+              src="https://cdn.hack.ngo/slackcdn/1790dcada493521586d206cb96e22d90.webp"
               sx={{
-                width: '200px',
-                height: '200px',
-                borderRadius: '50%',
+                width: '20rem',
+                translate: 'rotate(0.5deg)',
                 mb: 3
               }}
             />
