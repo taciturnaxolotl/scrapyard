@@ -771,138 +771,6 @@ export default function Columbus() {
         >
           <Map />
         </Box>
-
-        <Box
-          sx={{
-            backgroundImage: 'url(/elements/ripped-paper.png)',
-            backgroundSize: 'cover!important',
-            display: 'block',
-            width: '30vw',
-            height: '30vh',
-            width: ['90vw', '70vw', '46.8vw'],
-            alignItems: 'center',
-            justifyContent: 'center',
-            margin: '0vh',
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center'
-          }}
-        >
-          <Heading
-            as="h1"
-            sx={{
-              mx: '1vw',
-              fontWeight: 'lighter',
-              textAlign: 'center',
-              paddingTop: 15
-            }}
-          >
-            ABOUT THE ORGANIZERS
-          </Heading>
-        </Box>
-
-        <Box
-          sx={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-            gap: 4,
-            my: 4
-          }}
-        >
-          <Card
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              p: 3,
-              background: '#F0F0F0',
-              border: '2px solid black',
-              maxWidth: '24rem',
-              rotate: '-1deg'
-            }}
-          >
-            <Image
-              src="https://cdn.hack.ngo/slackcdn/4c53ace72bc3e63c75477c87630133c6.webp"
-              sx={{
-                width: '23rem',
-                translate: 'rotate(-0.5deg)',
-                mb: 3
-              }}
-            />
-            <Heading as="h3" mb={2}>
-              Meghana M.
-            </Heading>
-            <Text sx={{ textAlign: 'center', fontSize: '2rem' }}>
-              Hey, I'm meghana. Love building awesome things with awesome
-              people. See you at scrapyard!
-            </Text>
-          </Card>
-
-          <Card
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              p: 3,
-              background: '#F0F0F0',
-              border: '2px solid black',
-              maxWidth: '24rem',
-              rotate: '.5deg'
-            }}
-          >
-            <Image
-              src="https://cdn.hack.ngo/slackcdn/1790dcada493521586d206cb96e22d90.webp"
-              sx={{
-                width: '23rem',
-                translate: 'rotate(0.5deg)',
-                mb: 3
-              }}
-            />
-            <Heading as="h3" mb={2}>
-              Kristen O.
-            </Heading>
-            <Text sx={{ textAlign: 'center', fontSize: '1.75rem' }}>
-              Hello! I'm Kristen. I love creating awesome things that make
-              people laugh. Can't wait to see what you make at Scrapyard!
-            </Text>
-          </Card>
-
-          <Card
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              p: 3,
-              background: '#F0F0F0',
-              border: '2px solid black',
-              maxWidth: '24rem',
-              rotate: '1deg'
-            }}
-          >
-            <Image
-              src="https://cdn.hack.ngo/slackcdn/d7aa47bc73b0da6c8b5df085ed21674d.webp"
-              sx={{
-                width: '23rem',
-                mb: 3
-              }}
-            />
-            <Heading as="h3" mb={2}>
-              Kieran K.
-            </Heading>
-            <Text sx={{ textAlign: 'center', mb: 2, fontSize: '1.4rem' }}>
-              Erlo! I'm Kieran and i'm secretly a hardware guy at heart :) I
-              mostly dabble in software but I'm looking forward to seeing what
-              hardware projects we can make together at Scrapyard!
-            </Text>
-            <Text sx={{ textAlign: 'center' }}>
-              (I just helped out with web dev and emailing so not really an
-              organizer lol)
-            </Text>
-          </Card>
-        </Box>
       </Box>
 
       <Box
@@ -1637,14 +1505,107 @@ export default function Columbus() {
           />
         </Heading>
 
-        {/* <Image
-            src="/elements/organizers/meghanapfp.jpg"
+        <Box
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            gap: 4,
+            my: 4
+          }}
+        >
+          <Card
             sx={{
-              width: [120, 128, 180],
-              position: 'absolute',
-              transform: 'translateY(370%)'
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              p: 3,
+              background: '#F0F0F0',
+              border: '2px solid black',
+              maxWidth: '24rem',
+              rotate: '-1deg'
             }}
-            /> */}
+          >
+            <Image
+              src="https://cdn.hack.ngo/slackcdn/4c53ace72bc3e63c75477c87630133c6.webp"
+              sx={{
+                width: '23rem',
+                translate: 'rotate(-0.5deg)',
+                mb: 3
+              }}
+            />
+            <Heading as="h3" mb={2}>
+              Meghana M.
+            </Heading>
+            <Text sx={{ textAlign: 'center', fontSize: '2rem' }}>
+              Hey, I'm meghana. Love building awesome things with awesome
+              people. See you at scrapyard!
+            </Text>
+          </Card>
+
+          <Card
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              p: 3,
+              background: '#F0F0F0',
+              border: '2px solid black',
+              maxWidth: '24rem',
+              rotate: '.5deg'
+            }}
+          >
+            <Image
+              src="https://cdn.hack.ngo/slackcdn/1790dcada493521586d206cb96e22d90.webp"
+              sx={{
+                width: '23rem',
+                translate: 'rotate(0.5deg)',
+                mb: 3
+              }}
+            />
+            <Heading as="h3" mb={2}>
+              Kristen O.
+            </Heading>
+            <Text sx={{ textAlign: 'center', fontSize: '1.6rem' }}>
+              Hello! I’m Kristen, I enjoy making fun websites and meeting new
+              people. Fun Fact About Me: I’m a self-taught pianist and bubble
+              tea enthusiast. Can’t wait to see you at Scrapyard!
+            </Text>
+          </Card>
+
+          <Card
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              p: 3,
+              background: '#F0F0F0',
+              border: '2px solid black',
+              maxWidth: '24rem',
+              rotate: '1deg'
+            }}
+          >
+            <Image
+              src="https://cdn.hack.ngo/slackcdn/d7aa47bc73b0da6c8b5df085ed21674d.webp"
+              sx={{
+                width: '23rem',
+                mb: 3
+              }}
+            />
+            <Heading as="h3" mb={2}>
+              Kieran K.
+            </Heading>
+            <Text sx={{ textAlign: 'center', mb: 2, fontSize: '1.4rem' }}>
+              Erlo! I'm Kieran and i'm secretly a hardware guy at heart :) I
+              mostly dabble in software but I'm looking forward to seeing what
+              hardware projects we can make together at Scrapyard!
+            </Text>
+            <Text sx={{ textAlign: 'center' }}>
+              (I just helped out with web dev and emailing so not really an
+              organizer lol)
+            </Text>
+          </Card>
+        </Box>
 
         <Heading
           as="h2"
