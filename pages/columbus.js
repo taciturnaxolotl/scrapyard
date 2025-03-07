@@ -1566,9 +1566,10 @@ export default function Columbus() {
             <Heading as="h3" mb={2}>
               Kristen O.
             </Heading>
-            <Text sx={{ textAlign: 'center', fontSize: '1.75rem' }}>
-              Hello! I'm Kristen. I love creating awesome things that make
-              people laugh. Can't wait to see what you make at Scrapyard!
+            <Text sx={{ textAlign: 'center', fontSize: '1.6rem' }}>
+              Hello! I’m Kristen, I enjoy making fun websites and meeting new
+              people. Fun Fact About Me: I’m a self-taught pianist and bubble
+              tea enthusiast. Can’t wait to see you at Scrapyard!
             </Text>
           </Card>
 
