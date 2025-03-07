@@ -26,19 +26,14 @@ import styles from './dej.module.css'
 
 // TODO: Change this schedule to your own!
 const schedule = [
-  { time: '10:00', event: 'Se deschid ușile' },
-  { time: '13:00', event: 'Ceremonia de deschidere' },
-  { time: '14:00', event: 'Prânzul' },
-  { time: '15:00', event: 'Începerea proiectelor' },
-  { time: '15:10', event: 'Workshop 1' },
-  { time: '16:00', event: 'Workshop 2' },
-  { time: '16:40', event: 'Workshop 3' },
-  { time: '18:00', event: 'Activitate surpriză' },
+  { time: '08:00', event: 'Se deschid ușile' },
+  { time: '09:00', event: 'Ceremonia de deschidere' },
+  { time: '13:00', event: 'Prânzul' },
+  { time: '14:00', event: 'Workshop 1' },
+  { time: '15:00', event: 'Workshop 2' },
+  { time: '16:00', event: 'Activitate surpriză' },
   { time: '19:00', event: 'Cina' },
-  { time: '00:00', event: 'Activitate surpriză' },
-  { time: '09:00', event: 'Micul dejun' },
-  { time: '11:30', event: 'Prezentarea proiectelor' },
-  { time: '13:00', event: 'Ceremonia de încheiere' }
+  { time: '21:00', event: 'Ceremonia de încheiere' }
 ]
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
@@ -465,7 +460,7 @@ export default function ExampleCity() {
         >
           {/* TODO: Change [EXAMPLECITY] to your event's city */}
           {/* TODO: Change [DURATION] to your event's duration (12hour, 24hour, 2-day) */}
-          Scrapyard Dej este un eveniment de 24 de ore - Aici este
+          Scrapyard Dej este un eveniment de 12 de ore - Aici este
           orarul estimativ!
         </Heading>
         <Box
