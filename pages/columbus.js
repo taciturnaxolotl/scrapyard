@@ -927,10 +927,10 @@ export default function Columbus() {
             ),
             'All this, for free?': (
               <>
-                Yep! Food, swag and good vibes are all included. Plus, if you’re
+                Yep! Food, swag and good vibes are all included. Plus, if you're
                 joining us from afar,{' '}
                 <Link href="https://gas.hackclub.com/">
-                  we’ll cover the cost of gas or a bus / train ticket
+                  we'll cover the cost of gas or a bus / train ticket
                 </Link>
                 .
               </>
@@ -954,7 +954,7 @@ export default function Columbus() {
             'What can I make at Scrapyard?': (
               <>
                 The most useless thing you can imagine –- jank is encouraged.
-                Apps? Games? Websites? We’ll have a bunch of resources and
+                Apps? Games? Websites? We'll have a bunch of resources and
                 mentors to help you fulfill your most pointless inventions.
               </>
             ),
@@ -980,7 +980,7 @@ export default function Columbus() {
             ),
             'My parents are asking...?': (
               <>
-                We’re here to help! Our parents guide will be released soon, but
+                We're here to help! Our parents guide will be released soon, but
                 they can reach out to us at{' '}
                 <Link href="mailto:columbus@scrapyard.hackclub.com">
                   columbus@scrapyard.hackclub.com
@@ -1272,13 +1272,15 @@ export default function Columbus() {
                 style={{
                   transform: 'scale(1.5)',
                   opacity:
-                    diamondSponsors[0].url ===
-                    'mailto:columbus@scrapyard.hackclub.com'
+                    diamondSponsors.length > 0 &&
+                    diamondSponsors[0]?.url ===
+                      'mailto:columbus@scrapyard.hackclub.com'
                       ? 0.7
                       : 1,
                   filter:
-                    diamondSponsors[0].url ===
-                    'mailto:columbus@scrapyard.hackclub.com'
+                    diamondSponsors.length > 0 &&
+                    diamondSponsors[0]?.url ===
+                      'mailto:columbus@scrapyard.hackclub.com'
                       ? 'grayscale(40%)'
                       : 'none'
                 }}
@@ -1373,13 +1375,15 @@ export default function Columbus() {
                 style={{
                   transform: 'scale(1.3)',
                   opacity:
-                    goldSponsors[0].url ===
-                    'mailto:columbus@scrapyard.hackclub.com'
+                    goldSponsors.length > 0 &&
+                    goldSponsors[0]?.url ===
+                      'mailto:columbus@scrapyard.hackclub.com'
                       ? 0.7
                       : 1,
                   filter:
-                    goldSponsors[0].url ===
-                    'mailto:columbus@scrapyard.hackclub.com'
+                    goldSponsors.length > 0 &&
+                    goldSponsors[0]?.url ===
+                      'mailto:columbus@scrapyard.hackclub.com'
                       ? 'grayscale(40%)'
                       : 'none'
                 }}
@@ -1477,13 +1481,15 @@ export default function Columbus() {
                   marginBottom: '-130px',
                   transform: 'scale(1.1)',
                   opacity:
-                    silverSponsors[0].url ===
-                    'mailto:columbus@scrapyard.hackclub.com'
+                    silverSponsors.length > 0 &&
+                    silverSponsors[0]?.url ===
+                      'mailto:columbus@scrapyard.hackclub.com'
                       ? 0.7
                       : 1,
                   filter:
-                    silverSponsors[0].url ===
-                    'mailto:columbus@scrapyard.hackclub.com'
+                    silverSponsors.length > 0 &&
+                    silverSponsors[0]?.url ===
+                      'mailto:columbus@scrapyard.hackclub.com'
                       ? 'grayscale(40%)'
                       : 'none'
                 }}
