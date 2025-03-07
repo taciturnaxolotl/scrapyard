@@ -196,8 +196,10 @@ export default function Victoria() {
             >
               Powered by VIATEC and Tiny
               <div style={{display: 'flex', gap: "25px"}}>
-                <img src="/city/victoria/viatech_logo.png" alt="VIATEC Logo" width="85px" style={{ borderRadius: "10px" }}/>
-                <img src="/city/victoria/tiny_logo.png" alt="Tiny Logo" width="85px" style={{ borderRadius: "10px" }}/>
+                <img src="/city/victoria/viatech_logo.png" alt="VIATEC Logo" width="85px" style={{ borderRadius: "10px", height: "max-content" }}/>
+                <img src="/city/victoria/tiny_logo.png" alt="Tiny Logo" width="85px" style={{ borderRadius: "10px", height: "max-content" }}/>
+                <img src="/city/victoria/tenfold_logo.webp" alt="VIATEC Logo" width="85px" style={{ borderRadius: "10px", height: "max-content" }}/>
+                <img src="/city/victoria/shreena_tutoring_logo.png" alt="Tiny Logo" width="85px" style={{ borderRadius: "10px", height: "max-content" }}/>
               </div>
             </Heading>
         </Box>
