@@ -870,6 +870,39 @@ export default function Columbus() {
               people laugh. Can't wait to see what you make at Scrapyard!
             </Text>
           </Card>
+
+          <Card
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              p: 3,
+              background: '#F0F0F0',
+              border: '2px solid black',
+              maxWidth: '300px',
+              rotate: '1deg'
+            }}
+          >
+            <Image
+              src="https://cdn.hack.ngo/slackcdn/d7aa47bc73b0da6c8b5df085ed21674d.webp"
+              sx={{
+                width: '20rem',
+                mb: 3
+              }}
+            />
+            <Heading as="h3" mb={2}>
+              Kieran K.
+            </Heading>
+            <Text sx={{ textAlign: 'center', mb: 2 }}>
+              Erlo! I'm Kieran and i'm secretly a hardware guy at heart :) I
+              mostly dabble in software but I'm looking forward to seeing what
+              hardware projects we can make together at Scrapyard!
+            </Text>
+            <Text sx={{ textAlign: 'center' }}>
+              (I just helped out with web dev and emailing so not really an
+              organizer lol)
+            </Text>
+          </Card>
         </Box>
       </Box>
 
