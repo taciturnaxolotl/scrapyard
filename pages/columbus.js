@@ -6,30 +6,33 @@ import Head from 'next/head'
 import { Box, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
 import dynamic from 'next/dynamic'
 import React, { useEffect, useState } from 'react'
-
-// TODO: Change this schedule to your own!
-const schedinprog = [
-  { time: 'XX:XX', event: 'SCHEDULE IN PROGRESS' }
-]
+import { transform } from 'motion'
 
 const schedule = [
-  { time: '11:00 AM', event: 'Doors open' },
-  { time: '12:00 PM', event: 'Opening ceremony' },
-  { time: '12:30 PM', event: 'Lunch' },
-  { time: '1:00 PM', event: 'Hacking starts!' },
-  { time: '2:00 PM', event: 'Workshop 1' },
-  { time: '4:00 PM', event: 'Activity 1' },
-  { time: '4:00 PM', event: 'Workshop 2' },
-  { time: '6:00 PM', event: 'dinner' },
+  { time: '10:00 AM', event: 'DOORS OPEN/BREAKFAST' },
+  { time: '10:45 PM', event: 'OPENING CEREMONY' },
+  { time: '11:30 PM', event: 'TEAM FORMATION' },
+  { time: '12:15 PM', event: 'STARTER WORKSHOP*' },
+  { time: '12:15 PM', event: 'HACKING STARTS' },
+  { time: '12:15 PM', event: 'STARTER WORKSHOP*' },
+  { time: '1:00 PM', event: 'LUNCH!' },
+  { time: '2:00 PM', event: 'STARTER WORKSHOP CONTINUES*' },
+  { time: '3:00 PM', event: 'CYBERSECURITY WORKSHOP*' },
+  { time: '4:00 PM', event: 'SURPRISE EVENT & SNACKS' },
+  { time: '6:00 PM', event: 'CLOSING FOR THE DAY' }
 ]
 
 const scheduleday2 = [
-  { time: '8:00 AM', event: 'Breakfast' },
-  { time: '10:30 AM', event: 'Demos w/ judges' },
-  { time: '12:00 PM', event: 'Closing ceremony' }
+  { time: '11:00 AM', event: 'DOORS OPEN/BREAKFAST' },
+  { time: '11:30 AM', event: 'FINAL HACKING BLOCK' },
+  { time: '1:00 PM', event: 'LUNCH!' },
+  { time: '2:00 PM', event: 'PROJECT DUE & HACKING ENDS' },
+  { time: '2:15 PM', event: 'PROJECT EXPO AND VOTING' },
+  { time: '3:00 PM', event: 'CLOSING CEREMONY & AWARDS' },
+  { time: '4:00 PM', event: 'SCRAPYARD ENDS' }
 ]
 
-//const Map = dynamic(() => import('../components/Map'), { ssr: false })
+const Map = dynamic(() => import('../components/Map'), { ssr: false })
 
 const Flag = () => (
   <Link
@@ -53,7 +56,6 @@ const Flag = () => (
   </Link>
 )
 
-
 export default function Columbus() {
   const [diamondSponsors, setDiamondSponsors] = useState([])
   const [goldSponsors, setGoldSponsors] = useState([])
@@ -64,7 +66,8 @@ export default function Columbus() {
     async function fetchDiamondSponsors() {
       try {
         const response = await fetch(
-          'https://MeghanaM4.github.io/scrapyardCMH-data/diamond.json?t=' + Date.now()
+          'https://MeghanaM4.github.io/scrapyardCMH-data/diamond.json?t=' +
+            Date.now()
         )
         const data = await response.json()
         setDiamondSponsors(data)
@@ -80,7 +83,8 @@ export default function Columbus() {
     async function fetchGoldSponsors() {
       try {
         const response = await fetch(
-          'https://MeghanaM4.github.io/scrapyardCMH-data/gold.json?t=' + Date.now()
+          'https://MeghanaM4.github.io/scrapyardCMH-data/gold.json?t=' +
+            Date.now()
         )
         const data = await response.json()
         setGoldSponsors(data)
@@ -96,7 +100,8 @@ export default function Columbus() {
     async function fetchSilverSponsors() {
       try {
         const response = await fetch(
-          'https://MeghanaM4.github.io/scrapyardCMH-data/silver.json?t=' + Date.now()
+          'https://MeghanaM4.github.io/scrapyardCMH-data/silver.json?t=' +
+            Date.now()
         )
         const data = await response.json()
         setSilverSponsors(data)
@@ -112,7 +117,8 @@ export default function Columbus() {
     async function fetchPartners() {
       try {
         const response = await fetch(
-          'https://meghanam4.github.io/scrapyardCMH-data/partner.json?t=' + Date.now()
+          'https://meghanam4.github.io/scrapyardCMH-data/partner.json?t=' +
+            Date.now()
         )
         const data = await response.json()
         setPartners(data)
@@ -199,7 +205,7 @@ export default function Columbus() {
                 margin: '8%'
               }}
             >
-              Build stupid s#1t, get stupid prizes.
+              Build stupid stuff, get stupid prizes.
             </Heading>
           </Box>
           <Box
@@ -232,7 +238,6 @@ export default function Columbus() {
                 fontSize: ['1.2em', '1.4em']
               }}
             >
-              {/* TODO: Change Columbus to your event's city */}
               Columbus, OH - March&nbsp;15-16
             </Heading>
 
@@ -248,9 +253,8 @@ export default function Columbus() {
                 fontSize: ['1.2em', '1.4em']
               }}
             >
-              Venue TBA
+              PAST Foundation - 1003 Kinnear Rd.
             </Heading>
-
           </Box>
         </Box>
         <Box
@@ -299,8 +303,7 @@ export default function Columbus() {
           />
         </Box>
         <Link
-          // TODO: Change [EVENTID] to your event's ID (see https://airtable.com/appigKiF7GbVISAlg/shrK3OiCJs4BRBIRG)
-          href="https://forms.hackclub.com/scrapyard-signup?event=reckNLlOx3NFmyOrH"
+          href="https://forms.hackclub.com/scrapyard-signup?event=columbus"
           target="_blank"
         >
           <Box
@@ -406,7 +409,6 @@ export default function Columbus() {
                 textDecoration: 'underline'
               }}
             >
-              {/* TODO: Change Columbus to your event's city */}
               What is Scrapyard?
             </Heading>
             <p
@@ -414,17 +416,14 @@ export default function Columbus() {
                 fontSize: '1.5em'
               }}
             >
-              {/* TODO: Change Columbus to your event's city */}
-              Scrapyard is The Most Useless Invention
-              competition,
-              happening in Columbus. Make the stupidest
-              things you can think of and win awesome stuff. 
-              Anything, from a {' '}
+              Scrapyard is The Most Useless Invention competition, happening in
+              Columbus. Make the stupidest things you can think of and win
+              awesome stuff. Anything, from a{' '}
               <Link href="https://www.youtube.com/watch?v=PnK4gzO6S3Q">
                 lamp that flashes faster the slower you type
               </Link>
               , to those useless ideas you thought of lying in bed, Scrapyard
-               Columbus needs you and your jank inventions!
+              Columbus needs you and your jank inventions!
             </p>
           </Box>
         </Box>
@@ -523,7 +522,6 @@ export default function Columbus() {
               paddingTop: 15
             }}
           >
-            {/* TODO: Change Columbus to your event's city */}
             WHAT'S HAPPENING AT SCRAPYARD Columbus?
           </Heading>
         </Box>
@@ -533,12 +531,26 @@ export default function Columbus() {
             fontSize: '1.5em',
             fontFamily: 'moonblossom',
             color: 'white',
-            textAlign: 'center'
+            textAlign: 'center',
+            paddingTop: 40
           }}
         >
-          Scrapyard Columbus is a 2-day event - HERE'S THE
-          SCHEDULE!
+          Scrapyard Columbus is a 2-day event - HERE'S THE SCHEDULE!
         </Heading>
+
+        <Heading
+          as="h2"
+          sx={{
+            fontSize: '1em',
+            fontFamily: 'moonblossom',
+            color: 'white',
+            textAlign: 'center',
+            paddingTop: 20
+          }}
+        >
+          (subject to change)
+        </Heading>
+
         <Box
           sx={{
             display: 'flex',
@@ -569,12 +581,13 @@ export default function Columbus() {
             Day 1 (SATURDAY)
           </Heading>
 
-          {schedinprog.map((item, i) => (
+          {schedule.map((item, i) => (
             <div
               style={{
                 display: 'flex',
                 width: '100%',
-                alignItems: 'center'
+                alignItems: 'center',
+                marginBottom: '2.5rem'
               }}
               key={i}
             >
@@ -605,20 +618,18 @@ export default function Columbus() {
             </div>
           ))}
 
-
-          {/* <Heading
-          as="h2"
-          sx={{
-            fontSize: '1.5em',
-            fontFamily: 'moonblossom',
-            color: 'black',
-            textAlign: 'center',
-            paddingTop: 30
-          }}
-        >
-          SLEEP (...zzz)
-        </Heading> */}
-
+          <Heading
+            as="h2"
+            sx={{
+              fontSize: '0.8em',
+              fontFamily: 'moonblossom',
+              color: 'black',
+              textAlign: 'left',
+              paddingTop: 20
+            }}
+          >
+            *Optional event
+          </Heading>
         </Box>
 
         <Box
@@ -651,12 +662,13 @@ export default function Columbus() {
             Day 2 (SUNDAY)
           </Heading>
 
-          {schedinprog.map((item, i) => (
+          {scheduleday2.map((item, i) => (
             <div
               style={{
                 display: 'flex',
                 width: '100%',
-                alignItems: 'center'
+                alignItems: 'center',
+                marginBottom: '2.5rem'
               }}
               key={i}
             >
@@ -686,26 +698,29 @@ export default function Columbus() {
               <p style={{ display: 'inline', margin: 0 }}>{item.time}</p>
             </div>
           ))}
-
-
         </Box>
-
       </Box>
 
       <Box
         sx={{
-          // backgroundImage: "url(/backgrounds/confetti.png)",
-          alignItems: 'center',
+          background: ["url('/backgrounds/bulletin@vertical.svg')"],
+          backgroundSize: 'cover!important',
           display: 'flex',
-          flexDirection: 'column'
+          paddingY: '1.5rem',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'column',
+          overflow: 'visible',
+          gap: '20px',
+          position: 'relative'
         }}
       >
         <Box
           sx={{
             backgroundImage: 'url(/elements/ripped-paper-strip.svg)',
-            // backgroundSize: "cover!important",
-            // display: "block",
-            // width: "30vw",
+            backgroundSize: 'cover!important',
+            display: 'block',
+            width: '30vw',
             height: '30vh',
             width: ['90vw', '70vw', '46.8vw'],
             alignItems: 'center',
@@ -754,7 +769,109 @@ export default function Columbus() {
             mt: 5
           }}
         >
-          {/* <Map /> */}
+          <Map />
+        </Box>
+
+        <Box
+          sx={{
+            backgroundImage: 'url(/elements/ripped-paper.png)',
+            backgroundSize: 'cover!important',
+            display: 'block',
+            width: '30vw',
+            height: '30vh',
+            width: ['90vw', '70vw', '46.8vw'],
+            alignItems: 'center',
+            justifyContent: 'center',
+            margin: '0vh',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
+          }}
+        >
+          <Heading
+            as="h1"
+            sx={{
+              mx: '1vw',
+              fontWeight: 'lighter',
+              textAlign: 'center',
+              paddingTop: 15
+            }}
+          >
+            ABOUT THE ORGANIZERS
+          </Heading>
+        </Box>
+
+        <Box
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            gap: 4,
+            maxWidth: '1200px',
+            my: 4
+          }}
+        >
+          <Card
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              p: 3,
+              background: '#F0F0F0',
+              border: '2px solid black',
+              maxWidth: '300px',
+              rotate: '-1deg'
+            }}
+          >
+            <Image
+              src="https://cachet.dunkirk.sh/users/U06P62WGWAV/r"
+              sx={{
+                width: '200px',
+                height: '200px',
+                borderRadius: '50%',
+                mb: 3
+              }}
+            />
+            <Heading as="h3" mb={2}>
+              Meghana M.
+            </Heading>
+            <Text sx={{ textAlign: 'center' }}>
+              Hey, I'm meghana. Love building awesome things with awesome
+              people. See you at scrapyard!
+            </Text>
+          </Card>
+
+          <Card
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              p: 3,
+              background: '#F0F0F0',
+              border: '2px solid black',
+              maxWidth: '300px',
+              rotate: '.5deg'
+            }}
+          >
+            <Image
+              src="https://cachet.dunkirk.sh/users/U0800CKMV8W/r"
+              sx={{
+                width: '200px',
+                height: '200px',
+                borderRadius: '50%',
+                mb: 3
+              }}
+            />
+            <Heading as="h3" mb={2}>
+              Kristen O.
+            </Heading>
+            <Text sx={{ textAlign: 'center' }}>
+              Hello! I'm Kristen. I love creating awesome things that make
+              people laugh. Can't wait to see what you make at Scrapyard!
+            </Text>
+          </Card>
         </Box>
       </Box>
 
@@ -801,46 +918,44 @@ export default function Columbus() {
           {Object.entries({
             'Who can participate in Scrapyard?': (
               <>
-                All high-school aged students are welcome,
-                just fill out the  {' '}
-              <Link href="https://forms.hackclub.com/scrapyard-signup?event=reckNLlOx3NFmyOrH">
-                form
-              </Link>!
+                All high-school aged students are welcome, just fill out the{' '}
+                <Link href="https://forms.hackclub.com/scrapyard-signup?event=reckNLlOx3NFmyOrH">
+                  form
+                </Link>
+                !
               </>
             ),
             'All this, for free?': (
               <>
-                Yep! Food, swag and good vibes are all included. Plus, if you’re
+                Yep! Food, swag and good vibes are all included. Plus, if you're
                 joining us from afar,{' '}
                 <Link href="https://gas.hackclub.com/">
-                  we’ll cover the cost of gas or a bus / train ticket
+                  we'll cover the cost of gas or a bus / train ticket
                 </Link>
                 .
               </>
             ),
             'What do I need?': (
               <>
-                Your laptop, chargers, and an open mind!
-                Additionally, if you plan to work on a hardware project, bring
-                the tools you'll need. 3D printers at the event are TBD.
+                the tools you'll need. 3D printers will be at the event and
+                we'll have some Arduinos, breadboards, and sensors to help you
+                make an epic hardware project.
               </>
             ),
             'I dont know how to code. Can I still participate?': (
               <>
-                Knowing how to code is NOT required. Whether 
-                your Useless Invention is on Scratch or Google Docs,
-                you'll still be eligible for epic prizes.
-                This hackathon is for all skill levels, even if
-                you'll be writing your first line of code we'll
-                have workshops and mentors to help you out.
+                Knowing how to code is NOT required. Whether your Useless
+                Invention is on Scratch or Google Docs, you'll still be eligible
+                for epic prizes. This hackathon is for all skill levels; even if
+                you'll be writing your first line of code we'll have starter
+                projects and mentors to help you out.
               </>
             ),
             'What can I make at Scrapyard?': (
               <>
                 The most useless thing you can imagine –- jank is encouraged.
-                Apps? Games? Websites?
-                We’ll have a bunch of resources and mentors to help
-                you fulfill your most pointless inventions.
+                Apps? Games? Websites? We'll have a bunch of resources and
+                mentors to help you fulfill your most pointless inventions.
               </>
             ),
             'What has Hack Club done before?': (
@@ -865,7 +980,7 @@ export default function Columbus() {
             ),
             'My parents are asking...?': (
               <>
-                We’re here to help! Our parents guide will be released soon, but
+                We're here to help! Our parents guide will be released soon, but
                 they can reach out to us at{' '}
                 <Link href="mailto:columbus@scrapyard.hackclub.com">
                   columbus@scrapyard.hackclub.com
@@ -879,7 +994,12 @@ export default function Columbus() {
                 <Link href="mailto:columbus@scrapyard.hackclub.com">
                   columbus@scrapyard.hackclub.com
                 </Link>{' '}
-                or in the #scrapyard-columbus channel on the Hack Club slack.
+                or in the{' '}
+                <Link href="https://hackclub.slack.com/archives/C0866UXSQKX">
+                  #scrapyard-columbus
+                </Link>{' '}
+                on the{' '}
+                <Link href="https://hackclub.com/slack/">Hack Club slack</Link>.
               </>
             )
           }).map(([question, answer], i) => {
@@ -957,430 +1077,435 @@ export default function Columbus() {
                 margin: '8%',
                 fontSize: ['1.2em', '1.4em'],
                 textTransform: 'inherit!important',
-                paddingY: ['15px', '0px'],
+                paddingY: ['15px', '0px']
               }}
             >
               {/* TODO: Change Columbus to your event's city */}
               SIGN UP FOR SCRAPYARD Columbus
             </Heading>
-
           </Box>
-
         </Link>
 
         <Box
-        sx={{
-          width: '100vw',
-          // background: [
-          //   "url('/backgrounds/bulletin@vertical.svg')",
-          //   "url('/backgrounds/bulletin@vertical.svg')",
-          //   "url('/backgrounds/bulletin.svg')"
-          // ],
-          // background: "url('/backgrounds/bulletin@vertical.svg')",
-          //background: "url('/backgrounds/lined-paper.png')",
-          background: '#337d78',
-          backgroundSize: 'cover!important',
-          backgroundPosition: 'center center',
-          display: 'block',
-          justifyContent: 'center',
-          alignItems: 'center',
-          flexDirection: 'column',
-          overflow: 'visible',
-          gap: '20px',
-          height: ['auto'],
-          position: 'relative'
-        }}
-        id="sponsors"
-      >
-        <Box
           sx={{
-            display: 'flex',
-            width: '100%',
-            height: '100%',
-            flexWrap: 'wrap',
-            p: '4vw',
-            position: 'relative',
+            width: '100vw',
+            // background: [
+            //   "url('/backgrounds/bulletin@vertical.svg')",
+            //   "url('/backgrounds/bulletin@vertical.svg')",
+            //   "url('/backgrounds/bulletin.svg')"
+            // ],
+            // background: "url('/backgrounds/bulletin@vertical.svg')",
+            //background: "url('/backgrounds/lined-paper.png')",
+            background: '#337d78',
+            backgroundSize: 'cover!important',
+            backgroundPosition: 'center center',
+            display: 'block',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'column',
             overflow: 'visible',
-            justifyContent: ['space-around', 'space-around', null],
-            pb: '12vw'
+            gap: '20px',
+            height: ['auto'],
+            position: 'relative'
           }}
+          id="sponsors"
         >
           <Box
             sx={{
-              width: '100%',
               display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'start',
-              height: 'min-content',
+              width: '100%',
+              height: '100%',
+              flexWrap: 'wrap',
+              p: '4vw',
+              position: 'relative',
+              overflow: 'visible',
+              justifyContent: ['space-around', 'space-around', null],
+              pb: '12vw'
             }}
           >
             <Box
               sx={{
-                background: "url('/elements/stapled-paper.png')",
-                backgroundSize: 'contain',
-                backgroundRepeat: 'no-repeat',
+                width: '100%',
                 display: 'flex',
                 justifyContent: 'center',
-                alignItems: 'center',
-                height: '100px',
-                width: '400px',
+                alignItems: 'start',
+                height: 'min-content'
               }}
             >
-              <Heading
-                as="h2"
-                sx={{
-                  textAlign: 'center',
-                  fontSize: '3em',
-                  marginTop: '-10px'
-                }}
-              >
-                Sponsors
-              </Heading>
-            </Box>
-          </Box>
-          <div
-            style={{
-              width: '100%',
-              display: 'flex',
-              flexWrap: 'wrap',
-              flexDirection: 'column',
-              alignItems: 'center',
-              gap: '100px',
-              marginTop: '50px',
-              transform: 'scale(1.1)'
-            }}
-          >
-            <div>
               <Box
                 sx={{
-                  backgroundColor: '#d4caa3',
+                  background: "url('/elements/stapled-paper.png')",
+                  backgroundSize: 'contain',
+                  backgroundRepeat: 'no-repeat',
                   display: 'flex',
-                  flexDirection: 'column',
-                  width: '100%',
-                  alignItems: 'center',
-                  padding: '20px',
-                  transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
-                  outline: 'solid 2px white',
-                  transition: 'transform 0.2s',
-                  zIndex: 2,
-                  ':hover': {
-                    transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`
-                  }
-                }}
-              >
-                <Heading
-                  as="h2"
-                  sx={{
-                    textAlign: 'center',
-                    fontSize: '1.5em',
-                    fontFamily: 'moonblossom',
-                    color: 'white',
-                    mt: 2
-                  }}
-                >
-                  PARTNERS
-                </Heading>
-              </Box>
-              <div
-                style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  gap: '20px',
-                  // height: '200px',
-                  transform: 'scale(0.9)',
-                  justifyContent: 'center'
-                }}
-              >
-                {partners.map((sponsor, i) => (
-                  <Link
-                    href={sponsor.url}
-                    target="_blank"
-                    sx={{
-                      backgroundColor: '#d4caa3',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      width: '200px',
-                      alignItems: 'center',
-                      padding: '20px',
-                      transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
-                      outline: 'solid 2px white',
-                      transition: 'transform 0.2s',
-                      ':hover': {
-                        transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`,
-                        zIndex: 1
-                      }
-                    }}
-                  >
-                    <Image
-                      key={i}
-                      src={sponsor.image}
-                      alt={sponsor.name}
-                      style={{
-                        width: '100px',
-                        height: '100px',
-                        objectFit: 'contain'
-                      }}
-                    />
-                    <Text
-                      sx={{
-                        textAlign: 'center',
-                        fontSize: '1.5em',
-                        fontFamily: 'moonblossom',
-                        color: 'white',
-                        mt: 2,
-                        wordWrap: 'break-word'
-                      }}
-                    >
-                      {sponsor.name}
-                    </Text>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-          <div
-            style={{
-              width: '100%',
-              display: 'flex',
-              flexWrap: 'wrap',
-              flexDirection: 'column',
-              alignItems: 'center',
-              gap: '100px',
-              marginTop: '50px'
-            }}
-          >
-            <div>
-              <Box
-                sx={{
-                  backgroundColor: '#86CEFA',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  width: '100%',
-                  alignItems: 'center',
-                  padding: '20px',
-                  transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
-                  outline: 'solid 2px white',
-                  transition: 'transform 0.2s',
-                  zIndex: 2,
-                  ':hover': {
-                    transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`
-                  }
-                }}
-              >
-                <Heading
-                  as="h2"
-                  sx={{
-                    textAlign: 'center',
-                    fontSize: '1.5em',
-                    fontFamily: 'moonblossom',
-                    color: 'white',
-                    mt: 2
-                  }}
-                >
-                  DIAMOND SPONSORS
-                </Heading>
-              </Box>
-              <div
-                style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  gap: '20px',
-                  // height: '200px',
-                  transform: 'scale(0.9)',
-                  justifyContent: 'center'
-                }}
-              >
-                {silverSponsors.map((sponsor, i) => (
-                  <Link
-                    href={sponsor.url}
-                    target="_blank"
-                    sx={{
-                      backgroundColor: '#86CEFA',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      width: '200px',
-                      alignItems: 'center',
-                      padding: '20px',
-                      transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
-                      outline: 'solid 2px white',
-                      transition: 'transform 0.2s',
-                      ':hover': {
-                        transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`,
-                        zIndex: 1
-                      }
-                    }}
-                  >
-                    <Image
-                      key={i}
-                      src={sponsor.image}
-                      alt={sponsor.name}
-                      style={{
-                        width: '100px',
-                        height: '100px',
-                        objectFit: 'contain'
-                      }}
-                    />
-                    <Text
-                      sx={{
-                        textAlign: 'center',
-                        fontSize: '1.5em',
-                        fontFamily: 'moonblossom',
-                        color: 'white',
-                        mt: 2,
-                        wordWrap: 'break-word'
-                      }}
-                    >
-                      {sponsor.name}
-                    </Text>
-                  </Link>
-                ))}
-              </div>
-            </div>
-            <div>
-              <Box
-                sx={{
-                  backgroundColor: '#c9ae53',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  width: '100%',
-                  alignItems: 'center',
                   justifyContent: 'center',
-                  padding: '20px',
-                  transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
-                  outline: 'solid 2px white',
-                  marginTop: '-50px',
-                  transition: 'transform 0.2s',
-                  zIndex: 2,
-                  ':hover': {
-                    transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`
-                  }
+                  alignItems: 'center',
+                  height: '100px',
+                  width: '400px'
                 }}
               >
                 <Heading
                   as="h2"
                   sx={{
                     textAlign: 'center',
-                    fontSize: '1.5em',
-                    fontFamily: 'moonblossom',
-                    color: 'white',
-                    mt: 2
+                    fontSize: '3em',
+                    marginTop: '-10px'
                   }}
                 >
-                  GOLD SPONSORS
+                  Sponsors
                 </Heading>
               </Box>
-              <div
+            </Box>
+            <div
               style={{
+                width: '100%',
                 display: 'flex',
                 flexWrap: 'wrap',
-                gap: '20px',
-                // height: '200px',
-                transform: 'scale(0.9)',
-                justifyContent: 'center'
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '100px',
+                marginTop: '50px',
+                transform: 'scale(1.1)'
               }}
             >
-              {goldSponsors.map((sponsor, i) => (
-                <Link
-                  href={sponsor.url}
-                  target="_blank"
+              <div>
+                <Box
+                  sx={{
+                    backgroundColor: '#d4caa3',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    width: '100%',
+                    alignItems: 'center',
+                    padding: '20px',
+                    transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
+                    outline: 'solid 2px white',
+                    transition: 'transform 0.2s',
+                    zIndex: 2,
+                    ':hover': {
+                      transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`
+                    }
+                  }}
+                >
+                  <Heading
+                    as="h2"
+                    sx={{
+                      textAlign: 'center',
+                      fontSize: '1.5em',
+                      fontFamily: 'moonblossom',
+                      color: 'white',
+                      mt: 2
+                    }}
+                  >
+                    PARTNERS
+                  </Heading>
+                </Box>
+                <div
+                  style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    gap: '20px',
+                    // height: '200px',
+                    transform: 'scale(0.9)',
+                    justifyContent: 'center'
+                  }}
+                >
+                  {partners.map((sponsor, i) => (
+                    <Link
+                      href={sponsor.url}
+                      target="_blank"
+                      sx={{
+                        backgroundColor: '#d4caa3',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        width: '200px',
+                        alignItems: 'center',
+                        padding: '20px',
+                        transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
+                        outline: 'solid 2px white',
+                        transition: 'transform 0.2s',
+                        ':hover': {
+                          transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`,
+                          zIndex: 1
+                        }
+                      }}
+                    >
+                      <Image
+                        key={i}
+                        src={sponsor.image}
+                        alt={sponsor.name}
+                        style={{
+                          width: '100px',
+                          height: '100px',
+                          objectFit: 'contain'
+                        }}
+                      />
+                      <Text
+                        sx={{
+                          textAlign: 'center',
+                          fontSize: '1.5em',
+                          fontFamily: 'moonblossom',
+                          color: 'white',
+                          mt: 2,
+                          wordWrap: 'break-word'
+                        }}
+                      >
+                        {sponsor.name}
+                      </Text>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div
+              style={{
+                width: '100%',
+                display: 'flex',
+                flexWrap: 'wrap',
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '13rem',
+                marginTop: '10rem'
+              }}
+            >
+              <div
+                style={{
+                  transform: 'scale(1.5)',
+                  opacity:
+                    diamondSponsors.length > 0 &&
+                    diamondSponsors[0]?.url ===
+                      'mailto:columbus@scrapyard.hackclub.com'
+                      ? 0.7
+                      : 1,
+                  filter:
+                    diamondSponsors.length > 0 &&
+                    diamondSponsors[0]?.url ===
+                      'mailto:columbus@scrapyard.hackclub.com'
+                      ? 'grayscale(40%)'
+                      : 'none'
+                }}
+              >
+                <Box
+                  sx={{
+                    backgroundColor: '#86CEFA',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    width: '100%',
+                    alignItems: 'center',
+                    padding: '20px',
+                    transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
+                    outline: 'solid 2px white',
+                    transition: 'transform 0.2s',
+                    zIndex: 2,
+                    ':hover': {
+                      transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`
+                    }
+                  }}
+                >
+                  <Heading
+                    as="h2"
+                    sx={{
+                      textAlign: 'center',
+                      fontSize: '1.5em',
+                      fontFamily: 'moonblossom',
+                      color: 'white',
+                      mt: 2
+                    }}
+                  >
+                    DIAMOND SPONSORS
+                  </Heading>
+                </Box>
+                <div
+                  style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    gap: '20px',
+                    height: '200px',
+                    transform: 'scale(0.9)',
+                    justifyContent: 'center'
+                  }}
+                >
+                  {diamondSponsors.map((sponsor, i) => (
+                    <Link
+                      href={sponsor.url}
+                      target="_blank"
+                      sx={{
+                        backgroundColor: '#86CEFA',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        width: '15rem',
+                        alignItems: 'center',
+                        padding: '20px',
+                        transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
+                        outline: 'solid 2px white',
+                        transition: 'transform 0.2s',
+                        ':hover': {
+                          transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`,
+                          zIndex: 1
+                        }
+                      }}
+                    >
+                      <Image
+                        key={i}
+                        src={sponsor.image}
+                        alt={sponsor.name}
+                        style={{
+                          width: '100px',
+                          height: '100px',
+                          objectFit: 'contain'
+                        }}
+                      />
+                      <Text
+                        sx={{
+                          textAlign: 'center',
+                          fontSize: '1.5em',
+                          fontFamily: 'moonblossom',
+                          color: 'white',
+                          mt: 2,
+                          wordWrap: 'break-word'
+                        }}
+                      >
+                        {sponsor.name}
+                      </Text>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              <div
+                style={{
+                  transform: 'scale(1.3)',
+                  opacity:
+                    goldSponsors.length > 0 &&
+                    goldSponsors[0]?.url ===
+                      'mailto:columbus@scrapyard.hackclub.com'
+                      ? 0.7
+                      : 1,
+                  filter:
+                    goldSponsors.length > 0 &&
+                    goldSponsors[0]?.url ===
+                      'mailto:columbus@scrapyard.hackclub.com'
+                      ? 'grayscale(40%)'
+                      : 'none'
+                }}
+              >
+                <Box
                   sx={{
                     backgroundColor: '#c9ae53',
                     display: 'flex',
                     flexDirection: 'column',
-                    width: '200px',
+                    width: '100%',
                     alignItems: 'center',
+                    justifyContent: 'center',
                     padding: '20px',
                     transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
                     outline: 'solid 2px white',
+                    marginTop: '-50px',
                     transition: 'transform 0.2s',
+                    zIndex: 2,
                     ':hover': {
-                      transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`,
-                      zIndex: 1
+                      transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`
                     }
                   }}
                 >
-                  <Image
-                    key={i}
-                    src={sponsor.image}
-                    alt={sponsor.name}
-                    style={{
-                      width: '100px',
-                      height: '100px',
-                      objectFit: 'contain'
-                    }}
-                  />
-                  <Text
+                  <Heading
+                    as="h2"
                     sx={{
                       textAlign: 'center',
                       fontSize: '1.5em',
                       fontFamily: 'moonblossom',
                       color: 'white',
-                      mt: 2,
-                      wordWrap: 'break-word'
+                      mt: 2
                     }}
                   >
-                    {sponsor.name}
-                  </Text>
-                </Link>
-              ))}
-            </div>
-          </div>
-          <div style={{ marginBottom: '-130px' }}>
-            <Box
-              sx={{
-                backgroundColor: '#c7c7c7',
-                display: 'flex',
-                flexDirection: 'column',
-                width: '100%',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: '20px',
-                transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
-                outline: 'solid 2px white',
-                marginTop: '-50px',
-                transition: 'transform 0.2s',
-                ':hover': {
-                  transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`,
-                  zIndex: 1
-                }
-              }}
-            >
-              <Heading
-                as="h2"
-                sx={{
-                  textAlign: 'center',
-                  fontSize: '1.5em',
-                  fontFamily: 'moonblossom',
-                  color: 'white',
-                  mt: 2
+                    GOLD SPONSORS
+                  </Heading>
+                </Box>
+                <div
+                  style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    gap: '20px',
+                    // height: '200px',
+                    transform: 'scale(0.9)',
+                    justifyContent: 'center'
+                  }}
+                >
+                  {goldSponsors.map((sponsor, i) => (
+                    <Link
+                      href={sponsor.url}
+                      target="_blank"
+                      sx={{
+                        backgroundColor: '#c9ae53',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        width: '200px',
+                        alignItems: 'center',
+                        padding: '20px',
+                        transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
+                        outline: 'solid 2px white',
+                        transition: 'transform 0.2s',
+                        ':hover': {
+                          transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`,
+                          zIndex: 1
+                        }
+                      }}
+                    >
+                      <Image
+                        key={i}
+                        src={sponsor.image}
+                        alt={sponsor.name}
+                        style={{
+                          width: '100px',
+                          height: '100px',
+                          objectFit: 'contain'
+                        }}
+                      />
+                      <Text
+                        sx={{
+                          textAlign: 'center',
+                          fontSize: '1.5em',
+                          fontFamily: 'moonblossom',
+                          color: 'white',
+                          mt: 2,
+                          wordWrap: 'break-word'
+                        }}
+                      >
+                        {sponsor.name}
+                      </Text>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              <div
+                style={{
+                  marginBottom: '-130px',
+                  transform: 'scale(1.1)',
+                  opacity:
+                    silverSponsors.length > 0 &&
+                    silverSponsors[0]?.url ===
+                      'mailto:columbus@scrapyard.hackclub.com'
+                      ? 0.7
+                      : 1,
+                  filter:
+                    silverSponsors.length > 0 &&
+                    silverSponsors[0]?.url ===
+                      'mailto:columbus@scrapyard.hackclub.com'
+                      ? 'grayscale(40%)'
+                      : 'none'
                 }}
               >
-                SILVER SPONSORS
-              </Heading>
-            </Box>
-            <div
-              style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: '20px',
-                // height: '200px',
-                transform: 'scale(0.8)',
-                justifyContent: 'center'
-              }}
-            >
-              {diamondSponsors.map((sponsor, i) => (
-                <Link
-                  href={sponsor.url}
-                  target="_blank"
+                <Box
                   sx={{
                     backgroundColor: '#c7c7c7',
                     display: 'flex',
                     flexDirection: 'column',
-                    width: '200px',
+                    width: '100%',
                     alignItems: 'center',
+                    justifyContent: 'center',
                     padding: '20px',
                     transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
                     outline: 'solid 2px white',
+                    marginTop: '-50px',
                     transition: 'transform 0.2s',
                     ':hover': {
                       transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`,
@@ -1388,42 +1513,85 @@ export default function Columbus() {
                     }
                   }}
                 >
-                  <Image
-                    key={i}
-                    src={sponsor.image}
-                    alt={sponsor.name}
-                    style={{
-                      width: '100px',
-                      height: '100px',
-                      objectFit: 'contain'
-                    }}
-                  />
-                  <Text
+                  <Heading
+                    as="h2"
                     sx={{
                       textAlign: 'center',
                       fontSize: '1.5em',
                       fontFamily: 'moonblossom',
                       color: 'white',
-                      mt: 2,
-                      wordWrap: 'break-word'
+                      mt: 2
                     }}
                   >
-                    {sponsor.name}
-                  </Text>
-                </Link>
-              ))}
+                    SILVER SPONSORS
+                  </Heading>
+                </Box>
+                <div
+                  style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    gap: '20px',
+                    // height: '200px',
+                    transform: 'scale(0.8)',
+                    justifyContent: 'center'
+                  }}
+                >
+                  {silverSponsors.map((sponsor, i) => (
+                    <Link
+                      href={sponsor.url}
+                      target="_blank"
+                      sx={{
+                        backgroundColor: '#c7c7c7',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        width: '200px',
+                        alignItems: 'center',
+                        padding: '20px',
+                        transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
+                        outline: 'solid 2px white',
+                        transition: 'transform 0.2s',
+                        ':hover': {
+                          transform: `rotate(${(Math.random() - 0.5) * 10}deg) scale(1.02)`,
+                          zIndex: 1
+                        }
+                      }}
+                    >
+                      <Image
+                        key={i}
+                        src={sponsor.image}
+                        alt={sponsor.name}
+                        style={{
+                          width: '100px',
+                          height: '100px',
+                          objectFit: 'contain'
+                        }}
+                      />
+                      <Text
+                        sx={{
+                          textAlign: 'center',
+                          fontSize: '1.5em',
+                          fontFamily: 'moonblossom',
+                          color: 'white',
+                          mt: 2,
+                          wordWrap: 'break-word'
+                        }}
+                      >
+                        {sponsor.name}
+                      </Text>
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </Box>
-    </Box>
+          </Box>
+        </Box>
 
         <Heading
           as="h1"
           sx={{
             mb: 5,
             position: 'relative',
-            paddingTop: 70,
+            paddingTop: 70
           }}
         >
           Meet the organizers
@@ -1438,7 +1606,7 @@ export default function Columbus() {
             }}
           />
         </Heading>
-        
+
         {/* <Image
             src="/elements/organizers/meghanapfp.jpg"
             sx={{
@@ -1447,8 +1615,6 @@ export default function Columbus() {
               transform: 'translateY(370%)'
             }}
             /> */}
-        
-       
 
         <Heading
           as="h2"

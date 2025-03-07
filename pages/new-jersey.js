@@ -38,11 +38,37 @@ const schedule = [
   { time: '8:15 PM', event: 'Closing ceremony' }
 ]
 
+const colors = ['#ffadad', '#fdffb6', '#9bf6ff', '#ffd6a5', '#caffbf'];
 const sponsors = [
   {
     name: 'Hack Club',
     link: 'https://hackclub.com/',
     image: 'https://assets.hackclub.com/icon-rounded.svg'
+  },
+  {
+    name: 'Hudson River Trading',
+    link: 'https://www.hudsonrivertrading.com',
+    image: '/city/new-jersey/HRT.png'
+  },
+    {
+    name: 'Savvas Learning Company',
+    link: 'https://www.savvas.com',
+    image: '/city/new-jersey/savvaslearning.jpg'
+  },
+    {
+    name: '.xyz',
+    link: 'https://gen.xyz',
+    image: '/city/new-jersey/xyz-logo-color.svg'
+  },
+  {
+    name: 'Interview Cake',
+    link: 'https://www.interviewcake.com',
+    image: '/city/new-jersey/CAKE.svg'
+  },
+  {
+    name: 'Art of Problem Solving',
+    link: 'https://artofproblemsolving.com',
+    image: '/city/new-jersey/AoPS.png'
   }
 ]
 
@@ -147,7 +173,8 @@ export default function ExampleCity() {
                 margin: '8%'
               }}
             >
-              Build weird stuff, get awesome prizes.
+              Happening at Visual Arts Center, Summit NJ
+          
             </Heading>
           </Box>
           <Box
@@ -347,9 +374,7 @@ export default function ExampleCity() {
               }}
             >
               {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              Scrapyard New Jersey is a hackathon for high schoolers
-              {/* TODO: Change [EXAMPLECITY] to your event's city */}
-              happening in New Jersey, where you can make the stupidest things
+              Scrapyard New Jersey is a hackathon for high schoolers happening in New Jersey, where you can make the stupidest things
               you can think of! Anything, from a{' '}
               <Link href="https://www.youtube.com/watch?v=PnK4gzO6S3Q">
                 lamp that flashes faster the slower you type
@@ -470,7 +495,7 @@ export default function ExampleCity() {
               href={sponsor.link || '#'}
               target="_blank"
               sx={{
-                backgroundColor: '#69c5f1',
+                backgroundColor: colors[i % colors.length],
                 display: 'flex',
                 flexDirection: 'column',
                 width: '200px',
