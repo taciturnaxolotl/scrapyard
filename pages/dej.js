@@ -645,10 +645,7 @@ export default function ExampleCity() {
             ),
             'De ce am nevoie?': (
               <>
-                De un laptop, încărcătoare și o minte deschisă! De asmenea,
-                acest eveniment se va desfășura și peste noapte, deci vino cu
-                produse de igienă(pastă de dinți, perie de dinți și DEODORANT)
-                și cu un sac de dormit. Dacă vrei să lucrezi pe un proiect de
+                De un laptop, încărcătoare și o minte deschisă! Dacă vrei să lucrezi pe un proiect de
                 hardware, adu-ți toate componentele de care ai nevoie.
               </>
             ),
@@ -696,9 +693,9 @@ export default function ExampleCity() {
                 Suntem aici să te ajutăm! Ghidul nostru pentru părinți va fi
                 publicat în curând, dar pot să ne scrie la{' '}
                 {/* TODO: Change this email to your event's email */}
-                <Link href="mailto:dej.scrapyard@hackclub.com">
+                <Link href="mailto:cosmin@hackclub.com">
                   {/* TODO: Change this email to your event's email */}
-                  dej.scrapyard@hackclub.com
+                  cosmin@hackclub.com
                 </Link>{' '}
                 pentru întrebări.
               </>
@@ -712,9 +709,9 @@ export default function ExampleCity() {
                 </Link>{' '}
                 în canalul #scrapyard-dej sau pe adresa de email{' '}
                 {/* TODO: Change this email to your event's email */}
-                <Link href="mailto:dej.scrapyard@hackclub.com">
+                <Link href="mailto:cosmin@hackclub.com">
                   {/* TODO: Change this email to your event's email */}
-                  dej.scrapyard@hackclub.com
+                  cosmin@hackclub.com
                 </Link>
                 .
               </>
