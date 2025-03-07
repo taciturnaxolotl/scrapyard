@@ -809,7 +809,6 @@ export default function Columbus() {
             flexWrap: 'wrap',
             justifyContent: 'center',
             gap: 4,
-            maxWidth: '1200px',
             my: 4
           }}
         >
@@ -821,14 +820,14 @@ export default function Columbus() {
               p: 3,
               background: '#F0F0F0',
               border: '2px solid black',
-              maxWidth: '300px',
+              maxWidth: '24rem',
               rotate: '-1deg'
             }}
           >
             <Image
               src="https://cdn.hack.ngo/slackcdn/4c53ace72bc3e63c75477c87630133c6.webp"
               sx={{
-                width: '20rem',
+                width: '23rem',
                 translate: 'rotate(-0.5deg)',
                 mb: 3
               }}
@@ -836,7 +835,7 @@ export default function Columbus() {
             <Heading as="h3" mb={2}>
               Meghana M.
             </Heading>
-            <Text sx={{ textAlign: 'center' }}>
+            <Text sx={{ textAlign: 'center', fontSize: '2rem' }}>
               Hey, I'm meghana. Love building awesome things with awesome
               people. See you at scrapyard!
             </Text>
@@ -850,14 +849,14 @@ export default function Columbus() {
               p: 3,
               background: '#F0F0F0',
               border: '2px solid black',
-              maxWidth: '300px',
+              maxWidth: '24rem',
               rotate: '.5deg'
             }}
           >
             <Image
               src="https://cdn.hack.ngo/slackcdn/1790dcada493521586d206cb96e22d90.webp"
               sx={{
-                width: '20rem',
+                width: '23rem',
                 translate: 'rotate(0.5deg)',
                 mb: 3
               }}
@@ -865,7 +864,7 @@ export default function Columbus() {
             <Heading as="h3" mb={2}>
               Kristen O.
             </Heading>
-            <Text sx={{ textAlign: 'center' }}>
+            <Text sx={{ textAlign: 'center', fontSize: '1.75rem' }}>
               Hello! I'm Kristen. I love creating awesome things that make
               people laugh. Can't wait to see what you make at Scrapyard!
             </Text>
@@ -879,21 +878,21 @@ export default function Columbus() {
               p: 3,
               background: '#F0F0F0',
               border: '2px solid black',
-              maxWidth: '300px',
+              maxWidth: '24rem',
               rotate: '1deg'
             }}
           >
             <Image
               src="https://cdn.hack.ngo/slackcdn/d7aa47bc73b0da6c8b5df085ed21674d.webp"
               sx={{
-                width: '20rem',
+                width: '23rem',
                 mb: 3
               }}
             />
             <Heading as="h3" mb={2}>
               Kieran K.
             </Heading>
-            <Text sx={{ textAlign: 'center', mb: 2 }}>
+            <Text sx={{ textAlign: 'center', mb: 2, fontSize: '1.4rem' }}>
               Erlo! I'm Kieran and i'm secretly a hardware guy at heart :) I
               mostly dabble in software but I'm looking forward to seeing what
               hardware projects we can make together at Scrapyard!
