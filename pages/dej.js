@@ -26,14 +26,14 @@ import styles from './dej.module.css'
 
 // TODO: Change this schedule to your own!
 const schedule = [
-  { time: '08:00', event: 'Se deschid ușile' },
-  { time: '09:00', event: 'Ceremonia de deschidere' },
+  { time: '09:00', event: 'Se deschid ușile' },
+  { time: '10:00', event: 'Ceremonia de deschidere' },
   { time: '13:00', event: 'Prânzul' },
   { time: '14:00', event: 'Workshop 1' },
   { time: '15:00', event: 'Workshop 2' },
   { time: '16:00', event: 'Activitate surpriză' },
   { time: '19:00', event: 'Cina' },
-  { time: '21:00', event: 'Ceremonia de încheiere' }
+  { time: '22:00', event: 'Ceremonia de încheiere' }
 ]
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false })
