@@ -6,6 +6,7 @@ import Head from 'next/head'
 import { Box, Card, Grid, Heading, Image, Link, Text } from 'theme-ui'
 import dynamic from 'next/dynamic'
 import React, { useEffect, useState } from 'react'
+import { transform } from 'motion'
 
 const schedule = [
   { time: '10:00 AM', event: 'DOORS OPEN/BREAKFAST' },
@@ -702,18 +703,24 @@ export default function Columbus() {
 
       <Box
         sx={{
-          // backgroundImage: "url(/backgrounds/confetti.png)",
-          alignItems: 'center',
+          background: ["url('/backgrounds/bulletin@vertical.svg')"],
+          backgroundSize: 'cover!important',
           display: 'flex',
-          flexDirection: 'column'
+          paddingY: '1.5rem',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'column',
+          overflow: 'visible',
+          gap: '20px',
+          position: 'relative'
         }}
       >
         <Box
           sx={{
             backgroundImage: 'url(/elements/ripped-paper-strip.svg)',
-            // backgroundSize: "cover!important",
-            // display: "block",
-            // width: "30vw",
+            backgroundSize: 'cover!important',
+            display: 'block',
+            width: '30vw',
             height: '30vh',
             width: ['90vw', '70vw', '46.8vw'],
             alignItems: 'center',
@@ -763,6 +770,108 @@ export default function Columbus() {
           }}
         >
           <Map />
+        </Box>
+
+        <Box
+          sx={{
+            backgroundImage: 'url(/elements/ripped-paper.png)',
+            backgroundSize: 'cover!important',
+            display: 'block',
+            width: '30vw',
+            height: '30vh',
+            width: ['90vw', '70vw', '46.8vw'],
+            alignItems: 'center',
+            justifyContent: 'center',
+            margin: '0vh',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
+          }}
+        >
+          <Heading
+            as="h1"
+            sx={{
+              mx: '1vw',
+              fontWeight: 'lighter',
+              textAlign: 'center',
+              paddingTop: 15
+            }}
+          >
+            ABOUT THE ORGANIZERS
+          </Heading>
+        </Box>
+
+        <Box
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            gap: 4,
+            maxWidth: '1200px',
+            my: 4
+          }}
+        >
+          <Card
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              p: 3,
+              background: '#F0F0F0',
+              border: '2px solid black',
+              maxWidth: '300px',
+              rotate: '-1deg'
+            }}
+          >
+            <Image
+              src="https://cachet.dunkirk.sh/users/U06P62WGWAV/r"
+              sx={{
+                width: '200px',
+                height: '200px',
+                borderRadius: '50%',
+                mb: 3
+              }}
+            />
+            <Heading as="h3" mb={2}>
+              Meghana M.
+            </Heading>
+            <Text sx={{ textAlign: 'center' }}>
+              Hey, I'm meghana. Love building awesome things with awesome
+              people. See you at scrapyard!
+            </Text>
+          </Card>
+
+          <Card
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              p: 3,
+              background: '#F0F0F0',
+              border: '2px solid black',
+              maxWidth: '300px',
+              rotate: '.5deg'
+            }}
+          >
+            <Image
+              src="https://cachet.dunkirk.sh/users/U0800CKMV8W/r"
+              sx={{
+                width: '200px',
+                height: '200px',
+                borderRadius: '50%',
+                mb: 3
+              }}
+            />
+            <Heading as="h3" mb={2}>
+              Kristen O.
+            </Heading>
+            <Text sx={{ textAlign: 'center' }}>
+              Hello! I'm Kristen. I love creating awesome things that make
+              people laugh. Can't wait to see what you make at Scrapyard!
+            </Text>
+          </Card>
         </Box>
       </Box>
 
@@ -1152,13 +1261,28 @@ export default function Columbus() {
                 width: '100%',
                 display: 'flex',
                 flexWrap: 'wrap',
-                flexDirection: 'column',
+                flexDirection: 'row',
                 alignItems: 'center',
-                gap: '100px',
-                marginTop: '50px'
+                justifyContent: 'center',
+                gap: '13rem',
+                marginTop: '10rem'
               }}
             >
-              <div>
+              <div
+                style={{
+                  transform: 'scale(1.5)',
+                  opacity:
+                    diamondSponsors[0].url ===
+                    'mailto:columbus@scrapyard.hackclub.com'
+                      ? 0.7
+                      : 1,
+                  filter:
+                    diamondSponsors[0].url ===
+                    'mailto:columbus@scrapyard.hackclub.com'
+                      ? 'grayscale(40%)'
+                      : 'none'
+                }}
+              >
                 <Box
                   sx={{
                     backgroundColor: '#86CEFA',
@@ -1194,12 +1318,12 @@ export default function Columbus() {
                     display: 'flex',
                     flexWrap: 'wrap',
                     gap: '20px',
-                    // height: '200px',
+                    height: '200px',
                     transform: 'scale(0.9)',
                     justifyContent: 'center'
                   }}
                 >
-                  {silverSponsors.map((sponsor, i) => (
+                  {diamondSponsors.map((sponsor, i) => (
                     <Link
                       href={sponsor.url}
                       target="_blank"
@@ -1207,7 +1331,7 @@ export default function Columbus() {
                         backgroundColor: '#86CEFA',
                         display: 'flex',
                         flexDirection: 'column',
-                        width: '200px',
+                        width: '15rem',
                         alignItems: 'center',
                         padding: '20px',
                         transform: `rotate(${(Math.random() - 0.5) * 10}deg)`,
@@ -1245,7 +1369,21 @@ export default function Columbus() {
                   ))}
                 </div>
               </div>
-              <div>
+              <div
+                style={{
+                  transform: 'scale(1.3)',
+                  opacity:
+                    goldSponsors[0].url ===
+                    'mailto:columbus@scrapyard.hackclub.com'
+                      ? 0.7
+                      : 1,
+                  filter:
+                    goldSponsors[0].url ===
+                    'mailto:columbus@scrapyard.hackclub.com'
+                      ? 'grayscale(40%)'
+                      : 'none'
+                }}
+              >
                 <Box
                   sx={{
                     backgroundColor: '#c9ae53',
@@ -1334,7 +1472,22 @@ export default function Columbus() {
                   ))}
                 </div>
               </div>
-              <div style={{ marginBottom: '-130px' }}>
+              <div
+                style={{
+                  marginBottom: '-130px',
+                  transform: 'scale(1.1)',
+                  opacity:
+                    silverSponsors[0].url ===
+                    'mailto:columbus@scrapyard.hackclub.com'
+                      ? 0.7
+                      : 1,
+                  filter:
+                    silverSponsors[0].url ===
+                    'mailto:columbus@scrapyard.hackclub.com'
+                      ? 'grayscale(40%)'
+                      : 'none'
+                }}
+              >
                 <Box
                   sx={{
                     backgroundColor: '#c7c7c7',
@@ -1377,7 +1530,7 @@ export default function Columbus() {
                     justifyContent: 'center'
                   }}
                 >
-                  {diamondSponsors.map((sponsor, i) => (
+                  {silverSponsors.map((sponsor, i) => (
                     <Link
                       href={sponsor.url}
                       target="_blank"
